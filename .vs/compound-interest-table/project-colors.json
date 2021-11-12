@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a4bdf127-02d2-49c3-8032-4e20d52fe5f1": {
+      "ProjectGuid": "a4bdf127-02d2-49c3-8032-4e20d52fe5f1",
+      "DisplayName": "compound-interest-table",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
