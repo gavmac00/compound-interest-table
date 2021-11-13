@@ -43,20 +43,10 @@ int main()
 	cout << "\nEnter the year step size: ";
 	cin >> yearStep;
 
-	//computation
-	rate = rate / 100; //percentage to a decimal
+	//computation & output
 
 	compoundClass run;
-	investment = run.compoundInterestCalculator(priciple, rate, year);
 
-	/*
-	for (int i = 0; i < 61; i++) {
-		investment = run.compoundInterestCalculator(priciple, rate, year); //calculates all 60 values
-		investments[i] = investment;
-	}
-	*/
-
-	//output
 	cout << fixed;
 	cout << setprecision(2);
 
@@ -67,17 +57,32 @@ int main()
 		cout << "	" << xaxis[x];
 	}
 	cout << "\n";
+	rate = rate / 100;
+
+	float oldRate = rate;	//used to maintain rate value each step
+	int oldYear = year;		//used to maintain year value each step
 
 	for (int y = 0; y < 10; y++) {				//10 rows
-		yaxis[y] = 100*rate + rateStep*(y);
+		yaxis[y] = 100*rate + rateStep*(y);		//first column
 		cout << yaxis[y] << "	";
 
-		/*
-		for (int xo = 0; xo < 6; xo++) {		//prints each slot per column
-			int cell = y * 6 + xo;				//calculates what cell we are in this loop
-			cout << investments[cell] << "	";	//prints
-		}
-		*/
+			for (int i = 0; i < 6; i++) {
+				rate = rate + (rateStep/100) * y;
+				year = year + yearStep * i;
+
+				investment = run.compoundInterestCalculator(priciple, rate, year); //calculates all 60 values
+				investments[i] = investment;
+				cout << investments[i] << "         ";
+				rate = oldRate;
+				year = oldYear;
+			}
 		cout << "\n";
 	}
 }
+
+
+
+
+
+
+
