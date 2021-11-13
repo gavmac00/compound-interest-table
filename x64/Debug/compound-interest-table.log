@@ -1,3 +1,2 @@
 ﻿  main.cpp
-C:\Users\gavin\Projects\C++\compound-interest-table\main.cpp(28,8): warning C4101: 'investments': unreferenced local variable
   compound-interest-table.vcxproj -> C:\Users\gavin\Projects\C++\compound-interest-table\x64\Debug\compound-interest-table.exe
